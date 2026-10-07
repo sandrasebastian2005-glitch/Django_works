@@ -1,5 +1,5 @@
 """
-URL configuration for pro project.
+URL configuration for Portfolio_Management project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.1/topics/http/urls/
@@ -18,16 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from app import views
 
-# url to veiw mapping
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    #path('routelabel',viewname,'urlname')  # http://127.0.0.1:8000/routelabel , if we give this name then the path should have it else it becomes error
-
-    path('',views.Home),    # http://127.0.0.1:8000/
-    path('Index',views.Index),
-
-    # here it shows error bcs this file and function is in app folder 
-    # hence we import them from that package
- 
+    path('about',views.Aboutapi.as_view()),
+    path('education',views.Educationapi.as_view()),
+    path('projects',views.Projectsapi.as_view()),
 ]
